@@ -28,8 +28,9 @@ public class ContactListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        getActivity().setTitle("Список контактов");
-        return inflater.inflate(R.layout.fragment_contact_list, null);
+
+            getActivity().setTitle("Список контактов");
+            return inflater.inflate(R.layout.fragment_contact_list, null);
     }
 
 

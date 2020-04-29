@@ -12,28 +12,33 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Fragment fragment = new ContactListFragment();
 
-    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addFragment();
+        if(savedInstanceState == null) {
+            addFragment();
+        }
+
         }
 
     private void addFragment(){
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.fragments_container,fragment).commit();
+            Fragment contactList = new ContactListFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.fragments_container, contactList).commit();
+
+
     }
 
     public void onClickOnContact(View view){
         Fragment contactDetails = new ContactDetailsFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(fragment.getId(),contactDetails).addToBackStack(null).commit();
-
+        transaction.replace(findViewById(R.id.fragments_container).getId(),contactDetails).addToBackStack(null).commit();
     }
+
 
 
 }
