@@ -7,48 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".ContactListFragment">
 
-    <FrameLayout
-        android:id="@+id/contactFragment"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contactCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@color/colorPrimary"
         android:onClick="onClickOnContact"
+        app:cardBackgroundColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/foto1"
+        <TextView
+            android:id="@+id/contactPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:srcCompat="@drawable/ic_launcher_background" />
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="83dp"
+            android:text="+79111111111"
+            android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/contactName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
+            android:layout_marginLeft="120dp"
             android:layout_marginTop="10dp"
             android:text="Орлов Макисм"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/phone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="91dp"
-            android:text="+79111111111"
-            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="10dp"
+            app:srcCompat="@drawable/ic_launcher_background" />
+    </androidx.cardview.widget.CardView>
 
 
-    </FrameLayout>
+
+
 
 
 

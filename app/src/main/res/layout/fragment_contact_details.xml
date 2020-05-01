@@ -9,9 +9,9 @@
     tools:context=".ContactDetailsFragment">
 
     <ImageView
-        android:id="@+id/foto2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/image"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/ic_launcher_background"
@@ -21,34 +21,34 @@
 
 
     <TextView
-        android:id="@+id/name1"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="Орлов Максим "
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.005"
-        app:layout_constraintStart_toEndOf="@+id/foto2"
+        app:layout_constraintStart_toEndOf="@+id/image"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/phone1"
+        android:id="@+id/phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="+79111111111"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/foto2" />
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 
     <TextView
         android:id="@+id/phone2"
@@ -57,12 +57,12 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="+79502222222"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone1" />
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     <TextView
         android:id="@+id/email"
@@ -71,7 +71,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="orlov3020max@gmail.com"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +85,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="max@netlevel.com"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,7 +99,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:paddingLeft="7dp"
+        android:paddingLeft="10dp"
         android:text="Студент 2 курса ИжГТУ, институт ИВТ, факультет ИВТ, кафедра АСОИУ"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
