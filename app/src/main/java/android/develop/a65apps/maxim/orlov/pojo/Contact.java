@@ -4,108 +4,75 @@ import java.util.Objects;
 
 public class Contact {
 
-    private int id;
-    private int contactImage;
-    private String name;
-    private String phone;
-    private String phone2;
-    private String email;
-    private String email2;
-    private String description;
+    private final int ID;
+    private final int IMAGE;
+    private final String NAME;
+    private final String PHONE;
+    private final String PHONE2;
+    private final String EMAIL;
+    private final String EMAIL2;
+    private final String DESCRIPTION;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return id == contact.id &&
-                Objects.equals(contactImage, contact.contactImage) &&
-                Objects.equals(name, contact.name) &&
-                Objects.equals(phone, contact.phone) &&
-                Objects.equals(phone2, contact.phone2) &&
-                Objects.equals(email, contact.email) &&
-                Objects.equals(email2, contact.email2) &&
-                Objects.equals(description, contact.description);
+        return ID == contact.ID &&
+                IMAGE == contact.IMAGE &&
+                Objects.equals(NAME, contact.NAME) &&
+                Objects.equals(PHONE, contact.PHONE) &&
+                Objects.equals(PHONE2, contact.PHONE2) &&
+                Objects.equals(EMAIL, contact.EMAIL) &&
+                Objects.equals(EMAIL2, contact.EMAIL2) &&
+                Objects.equals(DESCRIPTION, contact.DESCRIPTION);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, contactImage, name, phone, phone2, email, email2, description);
+        return Objects.hash(ID, IMAGE, NAME, PHONE, PHONE2, EMAIL, EMAIL2, DESCRIPTION);
     }
 
-
-    public Contact(int id, int contactImage, String name, String phone, String phone2, String email, String email2, String description) {
-        this.id = id;
-        this.contactImage = contactImage;
-        this.name = name;
-        this.phone = phone;
-        this.phone2 = phone2;
-        this.email = email;
-        this.email2 = email2;
-        this.description = description;
+    public int getID() {
+        return ID;
     }
 
-    public int getId() {
-        return id;
+    public int getIMAGE() {
+        return IMAGE;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getNAME() {
+        return NAME;
     }
 
-    public int getContactImage() {
-        return contactImage;
+    public String getPHONE() {
+        return PHONE;
     }
 
-    public void setContactImage(int contactImage) {
-        this.contactImage = contactImage;
+    public String getPHONE2() {
+        return PHONE2;
     }
 
-    public String getName() {
-        return name;
+    public String getEMAIL() {
+        return EMAIL;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getEMAIL2() {
+        return EMAIL2;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getDESCRIPTION() {
+        return DESCRIPTION;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPhone2() {
-        return phone2;
-    }
-
-    public void setPhone2(String phone2) {
-        this.phone2 = phone2;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEmail2() {
-        return email2;
-    }
-
-    public void setEmail2(String email2) {
-        this.email2 = email2;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public Contact(int ID, int IMAGE, String NAME, String PHONE, String PHONE2, String EMAIL, String EMAIL2, String DESCRIPTION) {
+        this.ID = ID;
+        this.IMAGE = IMAGE;
+        this.NAME = NAME;
+        this.PHONE = PHONE;
+        this.PHONE2 = PHONE2;
+        this.EMAIL = EMAIL;
+        this.EMAIL2 = EMAIL2;
+        this.DESCRIPTION = DESCRIPTION;
     }
 }

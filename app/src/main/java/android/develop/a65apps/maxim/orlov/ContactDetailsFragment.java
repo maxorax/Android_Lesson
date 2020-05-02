@@ -27,6 +27,11 @@ public class ContactDetailsFragment extends Fragment {
     private TextView description;
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             getActivity().setTitle("Детали контакта");
@@ -55,16 +60,28 @@ public class ContactDetailsFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        name = null;
+        contactImage = null;
+        phone = null;
+        phone2 = null;
+        email = null;
+        email2 = null;
+        description = null;
+    }
+
     public static ContactDetailsFragment newInstance(Contact contact){
         Bundle arg = new Bundle();
-        arg.putInt("id",contact.getId());
-        arg.putString("name",contact.getName());
-        arg.putString("phone",contact.getPhone());
-        arg.putString("phone2",contact.getPhone2());
-        arg.putString("email",contact.getEmail());
-        arg.putString("email2",contact.getEmail2());
-        arg.putString("description",contact.getDescription());
-        arg.putInt("image",contact.getContactImage());
+        arg.putInt("id",contact.getID());
+        arg.putString("name",contact.getNAME());
+        arg.putString("phone",contact.getPHONE());
+        arg.putString("phone2",contact.getPHONE2());
+        arg.putString("email",contact.getEMAIL());
+        arg.putString("email2",contact.getEMAIL2());
+        arg.putString("description",contact.getDESCRIPTION());
+        arg.putInt("image",contact.getIMAGE());
         ContactDetailsFragment contactDetailsFragment = new ContactDetailsFragment();
         contactDetailsFragment.setArguments(arg);
         return contactDetailsFragment;
