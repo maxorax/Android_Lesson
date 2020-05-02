@@ -4,75 +4,75 @@ import java.util.Objects;
 
 public class Contact {
 
-    private final int ID;
-    private final int IMAGE;
-    private final String NAME;
-    private final String PHONE;
-    private final String PHONE2;
-    private final String EMAIL;
-    private final String EMAIL2;
-    private final String DESCRIPTION;
+    private final int id;
+    private final int image;
+    private final String name;
+    private final String phone;
+    private final String phone2;
+    private final String email;
+    private final String email2;
+    private final String description;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Contact contact = (Contact) o;
-        return ID == contact.ID &&
-                IMAGE == contact.IMAGE &&
-                Objects.equals(NAME, contact.NAME) &&
-                Objects.equals(PHONE, contact.PHONE) &&
-                Objects.equals(PHONE2, contact.PHONE2) &&
-                Objects.equals(EMAIL, contact.EMAIL) &&
-                Objects.equals(EMAIL2, contact.EMAIL2) &&
-                Objects.equals(DESCRIPTION, contact.DESCRIPTION);
+        return id == contact.id &&
+                image == contact.image &&
+                Objects.equals(name, contact.name) &&
+                Objects.equals(phone, contact.phone) &&
+                Objects.equals(phone2, contact.phone2) &&
+                Objects.equals(email, contact.email) &&
+                Objects.equals(email2, contact.email2) &&
+                Objects.equals(description, contact.description);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ID, IMAGE, NAME, PHONE, PHONE2, EMAIL, EMAIL2, DESCRIPTION);
+        return Objects.hash(id, image, name, phone, phone2, email, email2, description);
     }
 
-    public int getID() {
-        return ID;
+    public Contact(int id, int image, String name, String phone, String phone2, String email, String email2, String description) {
+        this.id = id;
+        this.image = image;
+        this.name = name;
+        this.phone = phone;
+        this.phone2 = phone2;
+        this.email = email;
+        this.email2 = email2;
+        this.description = description;
     }
 
-    public int getIMAGE() {
-        return IMAGE;
+    public int getId() {
+        return id;
     }
 
-    public String getNAME() {
-        return NAME;
+    public int getImage() {
+        return image;
     }
 
-    public String getPHONE() {
-        return PHONE;
+    public String getName() {
+        return name;
     }
 
-    public String getPHONE2() {
-        return PHONE2;
+    public String getPhone() {
+        return phone;
     }
 
-    public String getEMAIL() {
-        return EMAIL;
+    public String getPhone2() {
+        return phone2;
     }
 
-    public String getEMAIL2() {
-        return EMAIL2;
+    public String getEmail() {
+        return email;
     }
 
-    public String getDESCRIPTION() {
-        return DESCRIPTION;
+    public String getEmail2() {
+        return email2;
     }
 
-    public Contact(int ID, int IMAGE, String NAME, String PHONE, String PHONE2, String EMAIL, String EMAIL2, String DESCRIPTION) {
-        this.ID = ID;
-        this.IMAGE = IMAGE;
-        this.NAME = NAME;
-        this.PHONE = PHONE;
-        this.PHONE2 = PHONE2;
-        this.EMAIL = EMAIL;
-        this.EMAIL2 = EMAIL2;
-        this.DESCRIPTION = DESCRIPTION;
+    public String getDescription() {
+        return description;
     }
 }

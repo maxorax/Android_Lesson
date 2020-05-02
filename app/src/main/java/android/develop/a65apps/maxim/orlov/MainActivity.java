@@ -1,16 +1,12 @@
 package android.develop.a65apps.maxim.orlov;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.Constraints;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.develop.a65apps.maxim.orlov.pojo.Contact;
 import android.os.Bundle;
 import android.view.View;
-import android.develop.a65apps.maxim.orlov.*;
-
 
 public class MainActivity extends AppCompatActivity implements ContactClick{
 
@@ -23,7 +19,6 @@ public class MainActivity extends AppCompatActivity implements ContactClick{
         if(savedInstanceState == null) {
             addFragment();
         }
-
     }
 
     private void addFragment(){
@@ -34,15 +29,14 @@ public class MainActivity extends AppCompatActivity implements ContactClick{
     }
 
     @Override
-    public void onClickOnContact(View view) {
-        view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Fragment contactDetails = ContactDetailsFragment.newInstance(contact);
-                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                    transaction.replace(R.id.fragments_container, contactDetails).addToBackStack(null).commit();
-                }
-            });
+    public void onClickOnContactCard(int id) {
+        findViewById(id).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment contactDetails = ContactDetailsFragment.newInstance(contact);
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragments_container, contactDetails).addToBackStack(null).commit();
+            }
+        });
     }
-
 }

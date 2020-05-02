@@ -13,8 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
-
 public class ContactDetailsFragment extends Fragment {
 
     private int id;
@@ -74,14 +72,14 @@ public class ContactDetailsFragment extends Fragment {
 
     public static ContactDetailsFragment newInstance(Contact contact){
         Bundle arg = new Bundle();
-        arg.putInt("id",contact.getID());
-        arg.putString("name",contact.getNAME());
-        arg.putString("phone",contact.getPHONE());
-        arg.putString("phone2",contact.getPHONE2());
-        arg.putString("email",contact.getEMAIL());
-        arg.putString("email2",contact.getEMAIL2());
-        arg.putString("description",contact.getDESCRIPTION());
-        arg.putInt("image",contact.getIMAGE());
+        arg.putInt("id",contact.getId());
+        arg.putString("name",contact.getName());
+        arg.putString("phone",contact.getPhone());
+        arg.putString("phone2",contact.getPhone2());
+        arg.putString("email",contact.getEmail());
+        arg.putString("email2",contact.getEmail2());
+        arg.putString("description",contact.getDescription());
+        arg.putInt("image",contact.getImage());
         ContactDetailsFragment contactDetailsFragment = new ContactDetailsFragment();
         contactDetailsFragment.setArguments(arg);
         return contactDetailsFragment;

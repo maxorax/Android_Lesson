@@ -1,5 +1,6 @@
 package android.develop.a65apps.maxim.orlov;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,9 +11,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+public class ContactListFragment extends Fragment{
 
+    private Context activity = null;
 
-public class ContactListFragment extends Fragment implements View.OnClickListener{
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if (context instanceof ContactClick){
+            activity = context;
+        }
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,15 +38,27 @@ public class ContactListFragment extends Fragment implements View.OnClickListene
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        onClick(view);
     }
 
     @Override
-    public void onClick(View v) {
-    try {
-        ((ContactClick)getActivity()).onClickOnContact(getActivity().findViewById(R.id.contactCard));
+    public void onStart() {
+        super.onStart();
+        Click();
     }
-    catch (ClassCastException e){}
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        activity = null;
+    }
+
+    private void Click() {
+    try {
+        ((ContactClick) activity).onClickOnContactCard(R.id.contactCard);
+    }
+    catch (ClassCastException e){
+        e.printStackTrace();
+    }
     }
 
 }
