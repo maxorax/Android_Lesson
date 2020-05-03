@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity implements ContactClick{
 
     @Override
     public void onClickOnContactCard(Contact contact) {
-                Fragment contactDetails = ContactDetailsFragment.newInstance(contact);
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragments_container, contactDetails).addToBackStack(null).commit();
+        Fragment contactDetails = ContactDetailsFragment.newInstance(contact);
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragments_container, contactDetails).addToBackStack(null).commit();
     }
 
 }

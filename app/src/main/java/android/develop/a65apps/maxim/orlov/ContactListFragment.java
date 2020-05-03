@@ -14,7 +14,9 @@ import android.view.ViewGroup;
 
 public class ContactListFragment extends Fragment{
 
-    private Contact contact;
+    private final Contact CONTACT = new Contact(1,R.drawable.smoke,"Максим Орлов","+79111111111",
+                                        "+79502222222","orlov3020max@gmail.com","max@netlevel.com",
+                                        "Студент 2 курса ИжГТУ, институт ИВТ, факультет ИВТ, кафедра АСОИУ");
     private ContactClick contactClick = null;
 
     @Override
@@ -45,17 +47,13 @@ public class ContactListFragment extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
-        contact = new Contact(1,R.drawable.smoke,"Максим Орлов","+79111111111","+79502222222","orlov3020max@gmail.com","max@netlevel.com","Студент 2 курса ИжГТУ, институт ИВТ, факультет ИВТ, кафедра АСОИУ");
         View contactCard = getActivity().findViewById(R.id.contactCard);
         contactCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             try {
-             contactClick.onClickOnContactCard(contact);
-            }
-             catch (ClassCastException e){
-                 e.printStackTrace();
-             }
+              if(contactClick != null) {
+                 contactClick.onClickOnContactCard(CONTACT);
+              }
             }
         });
     }
