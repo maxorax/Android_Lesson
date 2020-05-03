@@ -1,6 +1,7 @@
 package android.develop.a65apps.maxim.orlov;
 
 import android.content.Context;
+import android.develop.a65apps.maxim.orlov.pojo.Contact;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,13 +14,14 @@ import android.view.ViewGroup;
 
 public class ContactListFragment extends Fragment{
 
-    private Context activity = null;
+    private Contact contact;
+    private ContactClick contactClick = null;
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         if (context instanceof ContactClick){
-            activity = context;
+            contactClick =(ContactClick) context;
         }
     }
 
@@ -43,22 +45,25 @@ public class ContactListFragment extends Fragment{
     @Override
     public void onStart() {
         super.onStart();
-        Click();
+        contact = new Contact(1,R.drawable.smoke,"Максим Орлов","+79111111111","+79502222222","orlov3020max@gmail.com","max@netlevel.com","Студент 2 курса ИжГТУ, институт ИВТ, факультет ИВТ, кафедра АСОИУ");
+        View contactCard = getActivity().findViewById(R.id.contactCard);
+        contactCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             try {
+             contactClick.onClickOnContactCard(contact);
+            }
+             catch (ClassCastException e){
+                 e.printStackTrace();
+             }
+            }
+        });
     }
 
     @Override
     public void onDetach() {
         super.onDetach();
-        activity = null;
-    }
-
-    private void Click() {
-    try {
-        ((ContactClick) activity).onClickOnContactCard(R.id.contactCard);
-    }
-    catch (ClassCastException e){
-        e.printStackTrace();
-    }
+        contactClick = null;
     }
 
 }

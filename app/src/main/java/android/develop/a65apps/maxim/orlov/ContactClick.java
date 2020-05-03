@@ -4,5 +4,5 @@ import android.develop.a65apps.maxim.orlov.pojo.Contact;
 import android.view.View;
 
 public interface ContactClick {
-    void onClickOnContactCard(int id);
+    void onClickOnContactCard(Contact contact);
 }
